@@ -22,13 +22,13 @@ public class SigninPage {
 	WebElement passwordField;
 	@FindBy(xpath = "//input[@id='signInSubmit']")
 	WebElement signinButton;
-	@FindBy(xpath="//div[contains(text(),'Enter your mobile number or email')]")
+	@FindBy(xpath = "//div[contains(text(),'Enter your mobile number or email')]")
 	WebElement emptyEmailField;
-	@FindBy(xpath="//div[contains(text(),'Invalid email address.')]")
+	@FindBy(xpath = "//div[contains(text(),'Invalid email address.')]")
 	WebElement invalidEmailAddress;
-	@FindBy(xpath="//div[contains(text(),'Enter your password')]")
+	@FindBy(xpath = "//div[contains(text(),'Enter your password')]")
 	WebElement emptyPasswordField;
-	@FindBy(xpath="//div[@id='auth-error-message-box']//div[@class='a-box-inner a-alert-container']")
+	@FindBy(xpath = "//div[@id='auth-error-message-box']//div[@class='a-box-inner a-alert-container']")
 	WebElement invalidPassword;
 
 	public SigninPage(WebDriver driver) {
@@ -37,9 +37,9 @@ public class SigninPage {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		PageFactory.initElements(driver, this);
 	}
-	// Action Method
 
-// Generic reusable method (ONLY ONCE)
+	// Action Method
+    // Generic reusable method (ONLY ONCE)
 	public String getWarningText(WebElement element) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
@@ -50,6 +50,7 @@ public class SigninPage {
 			return "";
 		}
 	}
+
 	public String retrieveEmailWarning() {
 		return getWarningText(emailWarning);
 
