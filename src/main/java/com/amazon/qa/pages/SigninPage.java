@@ -23,11 +23,11 @@ public class SigninPage {
 	@FindBy(xpath = "//input[@id='signInSubmit']")
 	WebElement signinButton;
 	@FindBy(xpath = "//div[contains(text(),'Enter your mobile number or email')]")
-	WebElement emptyEmailField;
+	WebElement emptyEmailFieldWarning;
 	@FindBy(xpath = "//div[contains(text(),'Invalid email address.')]")
 	WebElement invalidEmailAddress;
 	@FindBy(xpath = "//div[contains(text(),'Enter your password')]")
-	WebElement emptyPasswordField;
+	WebElement emptyPasswordFieldWarning;
 	@FindBy(xpath = "//div[@id='auth-error-message-box']//div[@class='a-box-inner a-alert-container']")
 	WebElement invalidPassword;
 
@@ -52,12 +52,12 @@ public class SigninPage {
 	}
 
 	public String retrieveEmailWarning() {
-		return getWarningText(emailWarning);
+		return getWarningText(emptyEmailFieldWarning);
 
 	}
 
 	public String retrievepasswordWarning() {
-		return getWarningText(passwordWarning);
+		return getWarningText(emptyEmailFieldWarning);
 	}
 
 	public void enterEmailField(String emailTxt) {

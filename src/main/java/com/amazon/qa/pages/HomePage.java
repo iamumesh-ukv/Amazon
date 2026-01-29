@@ -1,7 +1,6 @@
 package com.amazon.qa.pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,5 +32,4 @@ public class HomePage {
 		wait.until(ExpectedConditions.elementToBeClickable(clickOnSigninLink)).click();
 		return new SigninPage(driver);
 	}
-
 }
