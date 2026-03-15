@@ -20,6 +20,8 @@ public class SignupPage {
 	WebElement clickOnContinue;
 	@FindBy(xpath = "//input[@id='ap_password']")
 	WebElement passwordField;
+	@FindBy(xpath = "//input[@id='signInSubmit']")
+	WebElement signinButton;
 	@FindBy(xpath = "//div[contains(text(),'Enter your mobile number or email')]")
 	WebElement emptyEmailFieldWarning;
 	@FindBy(xpath = "//div[contains(text(),'Enter your password')]")
@@ -46,20 +48,25 @@ public class SignupPage {
 
 	public String retrieveEmailWarning() {
 		return getWarningText(emptyEmailFieldWarning);
-
 	}
 
 	public String retrievepasswordWarning() {
 		return getWarningText(emptyEmailFieldWarning);
 	}
-	
-	public void enterEmailAddressField( String emailText)
-	{
+
+	public void enterEmailAddressField(String emailText) {
 		emailAddressField.sendKeys(emailText);
 	}
-	
-	public void enterPasswordField(String passwordText)
-	{
+
+	public void clickOnContinueButton() {
+		clickOnContinue.click();
+	}
+
+	public void enterPasswordField(String passwordText) {
 		passwordField.sendKeys(passwordText);
+	}
+
+	public void ClickOnSigninButton() {
+		signinButton.click();
 	}
 }
