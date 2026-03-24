@@ -5,8 +5,11 @@
     <classes>
       <class name="com.amazon.qa.testcases.SigninTest">
         <methods>
-          <include name="verifyLoginWithoutProvidingCredentials"/>
+          <include name="verifyLoginWithValidCredentials"/>
+          <include name="verifyLoginWithInvalidCredentials"/>
+          <include name="verifyLoginWithInvalidEmailAndValidPassword"/>
           <include name="tearDown"/>
+          <include name="verifyLoginWithValidEmailAndInvalidPassword"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.amazon.qa.testcases.SigninTest -->
